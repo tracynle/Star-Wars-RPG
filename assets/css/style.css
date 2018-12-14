@@ -1,0 +1,76 @@
+* {
+    box-sizing: border-box;
+  }
+
+body {
+    font-family: 'Audiowide', cursive;
+    background: url(../images/spaceship.jpg) black no-repeat;
+    color: white;
+
+}
+
+
+#main-container {
+    font-family: 'Audiowide', cursive;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    text-align: center;
+    font-size: 40px;
+}
+
+.container,
+h1,
+#player {
+    font-family: 'Audiowide', cursive;
+    font-size: 25px;
+    text-align: center;
+    color: yellow;
+
+}
+#character-name {
+    font-size: 20px;
+    font-family: 'Play', sans-serif;
+
+}
+#sides {
+    margin-bottom: 18px;
+    color: black;
+}
+
+#battle-title {
+    color: white;
+    margin-bottom: 15px;
+}
+#player-title1 {
+    color: #192A51;
+}
+#player-title2 {
+    color: #CC2936;
+}
+header {
+    margin-top: 30px;
+    
+  
+}
+.container {
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+    clear: both;
+    padding: 0;
+  }
+
+
+.img-thumbnail {
+    border: 1px;
+    width: 100%;
+}
+
+.img-fluid  {
+    max-width: 100%;
+    height: auto;
+}
+
+
+
+
