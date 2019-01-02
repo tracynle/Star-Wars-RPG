@@ -92,7 +92,6 @@ $(".attack").on("click", function() {
     if (playerScore <= 0) {
         $(".player-score").text('You Lose! “You must unlearn what you have learned.”- Yoda');   
     }
-    // If bad guy wins
     if (opponentScore <= 0){
         $(".player-score").text('You Win! Choose your next opponent.');
     }
