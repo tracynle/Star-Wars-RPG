@@ -19,14 +19,11 @@
 </head>
 <body>
     <div id="main-container">
-        <header>Whose Side Are You On?</header>
+        <header>Choose a Side...</header>
     </div>
 
     <div class="container">
-        <!--Music-->
-        <!-- <audio autoplay="autoplay">
-            <source src="assets/star-wars-theme-song.mp3" />     
-        </audio> -->
+
         <!--Light and Dark Side title-->
         <div class="row align-items-start"> 
             <div class="col-md-6">
@@ -39,48 +36,34 @@
         <!--Character selection-->
         <div class="row align-items-start">
             <!--Light Side-->
-            <div class="col-sm-2">
-                <div class="character-button" data-character="luke">
+            <div class="col-sm-2 goodGuy">
+                <div class="character-button" data-character="luke" data-hp="430">
                     <img src="assets/images/luke.jpg" alt="Luke Skywalker" class="img-thumbnail" class="img-fluid" alt="Responsive image">
                     <h2 class="character-name">Luke Skywalker</h2>
                 </div>
-                <div class="character-button" data-character="leia">
-                    <img src="assets/images/princess-leia.jpg" class="img-thumbnail" class="img-fluid" alt="Responsive image">
-                    <h2 class="character-name">Princess Leia</h2>
-                </div>
             </div>
-            <div class="col-sm-2">
-                <div class="character-button" data-character="obi">
+            <div class="col-sm-2 goodGuy">
+                <div class="character-button" data-character="obi" data-hp="380">
                     <img src="assets/images/obiwan.jpg" alt="Obi Wan Kenobi" class="img-thumbnail" class="img-fluid" alt="Responsive image">
                     <h2 class="character-name">Obi Wan Kenobi</h2>
                 </div>
-                <div class="character-button" data-character="yoda">
-                    <img src="assets/images/yoda.jpg" alt="Master Yoda" class="img-thumbnail" class="img-fluid" alt="Responsive image">
-                    <h2 class="character-name">Master Yoda</h2>
-                </div>
             </div>
             
+            <!--Empty column-->
             <div class="col-2">
-                <h1 id="sides">or</h1>
+                <h1 id="sides"></h1>
             </div>
         
             <!--Dark Side-->
-            <div class="col-sm-2">
-                <div class="character-button" data-character="vader">
+            <div class="col-sm-2 badGuy">
+                <div class="character-button" data-character="vader" data-hp="480">
                     <img src="assets/images/darthvader.jpg" alt="Darth Vader" class="img-thumbnail" class="img-fluid" alt="Responsive image">
                     <h2 class="character-name">Darth Vader</h2>
                 </div>
-                <div class="character-button" data-character="maul">
-                    <img src="assets/images/darthmaul.jpg" alt="Darth Maul" class="img-thumbnail" class="img-fluid" alt="Responsive image">
-                    <h2 class="character-name">Darth Maul</h2>
-                </div>
             </div>
-            <div class="col-sm-2">
-                <div class="character-button" data-character="sidious">
-                    <img src="assets/images/darthsidious.jpg" alt="Darth Sidious" class="img-thumbnail" class="img-fluid" alt="Responsive image">
-                    <h2 class="character-name">Darth Sidious</h2>
-                </div>
-                <div class="character-button" data-character="kylo">
+            <div class="col-sm-2 badGuy">
+
+                <div class="character-button" data-character="kylo" data-hp="350">
                     <img src="assets/images/kyloren.jpg" alt="Kylo Ren" class="img-thumbnail" class="img-fluid" alt="Responsive image">
                     <h2 class="character-name">Kylo Ren</h2>
                 </div>
@@ -88,25 +71,43 @@
             </div>
             <!--Battle area-->
             <div class="row align-items-start">
-                <div class="battle-area">
-                    <div class="col-sm-12">
-                        <h1 id="battle-title">Battle</h1>
-                    </div>
-               
-                    <div class="row align-items-start">
-                        <div class="col-md-6">
-                            <h1 id="player-title1">Your Player:</h1>
-                            <button type="button" class="btn btn-success attack">Attack</button>  
-                        </div>
-                        
-                        <div class="col-md-6">
-                            <h1 id="player-title2">Your Opponent:</h1>
-                        </div>
+                <div class="col-md-12">
+                    <div id="battle-area">
+                        <div id="battle-title">Battle</div>
                     </div>
                 </div>
             </div>
-            
+            <div class="row align-items-start">
+                <div class="col-md-6">  
+                    <div>
+                        <h1 id="player-title1">Your Player:</h1>
+                    </div>
+                    <div class="player-score">
+                    </div>
+                    <div>
+                        <button type="button" class="btn btn-success attack">Attack</button>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div>
+                        <h1 id="player-title2">Your Opponent:</h1>
+                    </div>
+                    <div class="opponent-score">
+                    </div>
+                </div>
+                
             </div>
+            <div class="row align-items-start">
+                <div class="col-sm-6 playerChosen">
+                    <!--Empty Column-->
+                </div>
+                <div class="col-sm-6 opponentChosen">
+                    <!--Empty Column-->
+                </div>
+            </div>
+            
+            
+            
         </div>
                
         
@@ -114,7 +115,5 @@
     </div>
 
 </body>
-<script>
-    
-</script>
+<script type="text/javascript" src="assets/javascript/game.js"></script>
 </html>

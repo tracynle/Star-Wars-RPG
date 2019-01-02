@@ -73,11 +73,11 @@ div.battle-area {
 }
 
 
-#battle-title {
+#battle-area {
     color: white;
     margin-bottom: 15px;
-   
-
+    text-align: center;
+    
 
 }
 #player-title1 {
@@ -88,11 +88,11 @@ div.battle-area {
 }
 #player-title2 {
     color: #CC2936;
-   
 
 
 }
 
 .btn {
     margin-top: 30px;
+    margin-bottom: 30px;
 }
