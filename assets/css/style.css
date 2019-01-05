@@ -13,7 +13,13 @@ header {
     margin-top: 30px;
     
 }
-
+#directions {
+    color: black;
+    font-size: 25px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    font-family: 'Oswald', sans-serif;
+}
 #main-container {
     font-family: 'Audiowide', cursive;
     margin-top: 40px;
