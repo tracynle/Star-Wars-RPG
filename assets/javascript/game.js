@@ -127,7 +127,7 @@ function createBadGuy(character, hp, characterDiv) {
 function killBadGuy() {
     killCount++;
     if (killCount == numOfBadGuys) {
-        $(".player-score").text('You Win!');
+        $(".player-score").text('You Win! "The Force is strong with this one." -Yoda');
         $(".attack").off("click");
         restartGame(); 
     }
