@@ -7,7 +7,14 @@ var goodGuyAttack;
 var badGuyAttack;
 var attackPower = 10;
 var numOfBadGuys = 0;
-var killCount = 0;
+var killCount = 0; 
+var restartGame = function() {
+    // When the 'Restart' button is clicked, reload the page.
+    var restart = $("<br><button class='btn btn-danger btn-margin'>Restart</button>").click(function() {
+      location.reload();
+    });
+    $(".player-score").append(restart);
+}
 
 
 // Character HP information
@@ -17,6 +24,51 @@ function Character(name, hp) {
     this.hp = hp;
 }
 
+function attack() {
+    hasGameStarted = true;
+    var audio = new Audio('assets/light-saber-on.mp3');
+    audio.play();
+
+    // Goodguy attacks badguy and reduces HP
+    badGuyAttack.hp = badGuyAttack.hp - attackPower;
+    // Update Opponent's HP
+    $(".opponent-score").text(badGuyAttack.hp);
+    
+   
+    // Badguy attacks goodguy and reduces HP
+    goodGuyAttack.hp = goodGuyAttack.hp - attackPower;
+    // Update HTML HP with Jquery.
+    $(".player-score").text(goodGuyAttack.hp);
+    //alert (goodGuyAttack.hp);
+    attackPower = attackPower + 10;
+
+    var playerScore = goodGuyAttack.hp;
+    var opponentScore = badGuyAttack.hp;
+
+    
+    // Both players score 
+    if (playerScore <= 0 && opponentScore <=0) {
+        if (playerScore < opponentScore) { 
+            $(".player-score").text('You Lose! “You must unlearn what you have learned.”- Yoda'); 
+            $(".attack").off("click");
+            restartGame(); 
+        }
+        else {
+            killBadGuy();
+        }
+    }
+    else if (playerScore <= 0) {
+        $(".player-score").text("You lose!")
+        $(".attack").off("click");
+        restartGame(); 
+    }
+    else if (opponentScore <= 0) {
+        killBadGuy();
+    }
+    else {
+        console.log("We're both alive!");
+    }
+}
 
 // Prints out what character user clicked
 $(".character-button").on("click", function() {
@@ -47,8 +99,6 @@ $(".character-button").on("click", function() {
     }
 });
 
-
-
 function createGoodGuy(character, hp, characterDiv) {
     if (goodGuyPicked == false) {
         $(".playerChosen").append(characterDiv );
@@ -62,6 +112,7 @@ function createGoodGuy(character, hp, characterDiv) {
 
 function createBadGuy(character, hp, characterDiv) {
     if (badGuyPicked == false) {
+        $(".attack").on("click", attack);
         $(".opponentChosen").empty();
         $(".opponentChosen").append(characterDiv);
         badGuyPicked = true;
@@ -70,63 +121,22 @@ function createBadGuy(character, hp, characterDiv) {
         $(".opponent-score").text(badGuyAttack.hp);
         $(".player-score").text(goodGuyAttack.originalHp);
         goodGuyAttack.hp = goodGuyAttack.originalHp;
-
     }
 }
 
-
-
-$(".attack").on("click", function() {
-    hasGameStarted = true;
-    var audio = new Audio('assets/light-saber-on.mp3');
-    audio.play();
-
-    // Goodguy attacks badguy and reduces HP
-    badGuyAttack.hp = badGuyAttack.hp - attackPower;
-    // Update HTML HP with Jquery
-    $(".opponent-score").text(badGuyAttack.hp);
-    //alert (badGuyAttack.hp);
-   
-
-    
-    // Badguy attacks goodguy and reduces HP
-    goodGuyAttack.hp = goodGuyAttack.hp - attackPower;
-    // Update HTML HP with Jquery.
-    $(".player-score").text(goodGuyAttack.hp);
-    //alert (goodGuyAttack.hp);
-    attackPower = attackPower + 10;
-
-    var playerScore = goodGuyAttack.hp;
-    var opponentScore = badGuyAttack.hp;
-
-    var restartGame = function() {
-        // When the 'Restart' button is clicked, reload the page.
-        var restart = $("<br><button class='btn btn-danger btn-margin'>Restart</button>").click(function() {
-          location.reload();
-        });
-        $(".player-score").append(restart);
-        // Change color in CSS for the button. 
-
-    }
-    if (playerScore <= 0) {
-        $(".player-score").text('You Lose! “You must unlearn what you have learned.”- Yoda'); 
+function killBadGuy() {
+    killCount++;
+    if (killCount == numOfBadGuys) {
+        $(".player-score").text('You Win!');
         $(".attack").off("click");
-        restartGame();
+        restartGame(); 
     }
-    // If good guy wins
-    if (opponentScore <= 0){
+    else {
         $(".player-score").text('You Win! Choose your next opponent.');
-        killCount++;
+        $(".attack").off("click");
         badGuyPicked = false;
         isOpponentDefeated = true;
         bothPlayersPicked = false;
     }
+}
 
-    if (killCount == numOfBadGuys) {
-        $(".player-score").text('You Win! "The Force is strong with this one." -Yoda');
-        restartGame();
-    }
-
-
-});
-   

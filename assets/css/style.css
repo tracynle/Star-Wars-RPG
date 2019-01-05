@@ -59,8 +59,13 @@ h1,
 .img-thumbnail {
     border: 1px;
     width: 100%;
+    
 }
 
+.goodGuy, .badGuy {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
 .img-fluid  {
     max-width: 100%;
     height: auto;
@@ -93,6 +98,19 @@ div.battle-area {
 }
 
 .btn-margin {
-    margin-top: 30px;
-    margin-bottom: 30px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.battle-container {
+    background-color: #754F44;
+    opacity: .8;
+    max-width: 100%;
+    padding: 40px;
+  
+    
+}
+
+.player-score, .opponent-score {
+    margin-top: 15px;
 }
