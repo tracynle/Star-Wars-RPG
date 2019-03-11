@@ -9,11 +9,9 @@ Whose side are you on? The Light side or the Dark side? This game will prove who
 Star Wars RPG game is made with HTML5, CSS, Bootstrap and jQuery.
 
 ## Demo 
-<p align="center"> 
 
 ![Star Wars RPG](demo/starwarsRPG.gif)
 
-</p>
 
 To play the game: [click here](https://tracynle.github.io/Star-Wars-RPG/)
 
