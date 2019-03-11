@@ -8,6 +8,9 @@ Whose side are you on? The Light side or the Dark side? This game will prove who
 
 Star Wars RPG game is made with HTML5, CSS, Bootstrap and jQuery.
 
+## Technology used
+HTML, CSS, Javascript, and Bootstrap
+
 ## Demo 
 
 ![Star Wars RPG](demo/starwarsRPG.gif)
