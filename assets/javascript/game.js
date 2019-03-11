@@ -86,13 +86,11 @@ $(".character-button").on("click", function() {
     if (hasGameStarted == false || isOpponentDefeated == true) {
         // Append the character image to the correct battle area
         if ($(this).parent().hasClass("goodGuy")) {
-
             createGoodGuy(character, hp, $(this));
         }
         else {
             createBadGuy(character, hp, $(this));
         }
-
         if (goodGuyPicked && badGuyPicked) {
             bothPlayersPicked = true;
         }
