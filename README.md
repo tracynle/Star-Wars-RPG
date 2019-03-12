@@ -6,8 +6,6 @@ Whose side are you on? The Light side or the Dark side? This game will prove who
 1. Pick your player from the Light side and your opponent from the Dark side by clicking on the image. 
 2. Click on the Attack button and you will see how the battle goes as their HP decreases with each attack. 
 
-Star Wars RPG game is made with HTML5, CSS, Bootstrap and jQuery.
-
 ## Built with
 - HTML and CSS 
 - Javascript 
